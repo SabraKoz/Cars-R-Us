@@ -1,14 +1,18 @@
 import { InteriorOptions } from "./Interiors.js"
+import { OrderList } from "./Orders.js"
 import { PaintOptions } from "./Paints.js"
-import { TechnologiesOptions } from "./Tech.js"
+import { PlaceOrderButton } from "./PlaceOrderButton.js"
+import { TechOptions } from "./Tech.js"
 import { WheelOptions } from "./Wheels.js"
 
 
 const render = async () => {
     const paintOptionsHTML = await PaintOptions()
-    const techOptionsHTML = await TechnologiesOptions()
+    const techOptionsHTML = await TechOptions()
     const interiorOptionsHTML = await InteriorOptions()
     const wheelOptionsHTML = await WheelOptions()
+    const placeOrderButtonHTML = await PlaceOrderButton()
+    const orderListHTML = await OrderList()
 
     const composeHTML = `
         <h1>Cars-R-Us: Personal Car Builder</h1>
@@ -36,16 +40,21 @@ const render = async () => {
         </article>
         
         <article class="order">
-        
+            ${placeOrderButtonHTML}
         </article>
         
         <article class="customOrders">
             <h2>Custom Car Orders</h2>
-
+            ${orderListHTML}
         </article>
     `
 
     container.innerHTML = composeHTML
 }
+
+document.addEventListener("newOrderPlaced", customEvent => {
+    console.log("State of data has changed. Regenerating HTML...")
+    render()
+})
 
 render()

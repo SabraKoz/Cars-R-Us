@@ -1,8 +1,8 @@
 import { setTechChoice } from "./TransientState.js"
 
-export const TechnologiesOptions = async () => {
-    const response = await fetch("http://localhost:8088/technologies")
-    const technologies = await response.json()
+export const TechOptions = async () => {
+    const response = await fetch("http://localhost:8088/techs")
+    const techs = await response.json()
 
     document.addEventListener("change", handleTechChange)
 
@@ -11,9 +11,9 @@ export const TechnologiesOptions = async () => {
     techChoicesHTML += '<select id="tech">'
     techChoicesHTML += '<option value="0">Select a technology package</option>'
 
-    const techArray = technologies.map( 
+    const techArray = techs.map( 
         (tech) => {
-            return `<option value="${tech.id}">${tech.tech}</option>`
+            return `<option value="${tech.id}">${tech.type}</option>`
         }
     )
 
