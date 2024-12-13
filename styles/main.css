@@ -16,3 +16,19 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: 2px;
 }
 
+.choices {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.options {
+    margin: 30px;
+    padding: 20px;
+    border: 2px dashed #07b5ed;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+    background: beige;
+    max-width: 300px;
+}
+

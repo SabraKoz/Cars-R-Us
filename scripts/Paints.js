@@ -9,7 +9,7 @@ export const PaintOptions = async () => {
     let paintsChoiceHTML = ""
 
     paintsChoiceHTML += '<select id="paint">'
-    paintsChoiceHTML += '<option value="0">Select a color</option>'
+    paintsChoiceHTML += '<option value="0">Select a paint color</option>'
 
     const paintsArray = paints.map( 
         (paint) => {

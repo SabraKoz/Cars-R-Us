@@ -9,7 +9,7 @@ export const InteriorOptions = async () => {
     let interiorsChoiceHTML = ""
 
     interiorsChoiceHTML += '<select id="interior">'
-    interiorsChoiceHTML += '<option value="0">Select an interior</option>'
+    interiorsChoiceHTML += '<option value="0">Select an interior material</option>'
 
     const interiorsArray = interiors.map( 
         (interior) => {
