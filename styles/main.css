@@ -32,3 +32,17 @@ h1,h2,h3,h4,h5,h6 {
     max-width: 300px;
 }
 
+#place-order {
+    margin: 20px;
+    padding: 10px;
+    background: darkslategray;
+    color: white;
+    box-shadow: 2px 2px 5px black;
+}
+
+.order-details {
+    margin: 20px;
+    padding: 10px;
+    background: #e3eef2;
+    border: 2px dashed #07b5ed;
+}
